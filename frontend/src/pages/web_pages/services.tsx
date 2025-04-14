@@ -136,7 +136,7 @@ export default function WebSite() {
         <FeaturesSection
           projectName={'Test 444'}
           image={['Icons representing various services']}
-          withBg={1}
+          withBg={0}
           features={features_points}
           mainText={`Explore ${projectName} Services`}
           subTitle={`Unlock the full potential of your legal practice with our tailored services. Discover how ${projectName} can enhance your operations.`}

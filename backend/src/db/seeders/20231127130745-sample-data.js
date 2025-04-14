@@ -43,6 +43,26 @@ const ActivitiesData = [
 
     // type code here for "relation_one" field
   },
+
+  {
+    description: 'Contract review with Umbrella Corp',
+
+    scheduled_at: new Date('2023-11-04T09:00:00Z'),
+
+    // type code here for "relation_one" field
+
+    // type code here for "relation_one" field
+  },
+
+  {
+    description: 'Negotiation meeting with Hooli',
+
+    scheduled_at: new Date('2023-11-05T15:00:00Z'),
+
+    // type code here for "relation_one" field
+
+    // type code here for "relation_one" field
+  },
 ];
 
 const ContactsData = [
@@ -81,13 +101,37 @@ const ContactsData = [
 
     // type code here for "relation_one" field
   },
+
+  {
+    first_name: 'Diana',
+
+    last_name: 'Miller',
+
+    email: 'diana.miller@example.com',
+
+    // type code here for "relation_one" field
+
+    // type code here for "relation_one" field
+  },
+
+  {
+    first_name: 'Ethan',
+
+    last_name: 'Wilson',
+
+    email: 'ethan.wilson@example.com',
+
+    // type code here for "relation_one" field
+
+    // type code here for "relation_one" field
+  },
 ];
 
 const LeadsData = [
   {
     name: 'Acme Corp',
 
-    status: 'new',
+    status: 'lost',
 
     // type code here for "relation_one" field
 
@@ -111,7 +155,31 @@ const LeadsData = [
   {
     name: 'Initech',
 
+    status: 'contacted',
+
+    // type code here for "relation_one" field
+
+    // type code here for "relation_one" field
+
+    // type code here for "relation_one" field
+  },
+
+  {
+    name: 'Umbrella Corp',
+
     status: 'new',
+
+    // type code here for "relation_one" field
+
+    // type code here for "relation_one" field
+
+    // type code here for "relation_one" field
+  },
+
+  {
+    name: 'Hooli',
+
+    status: 'lost',
 
     // type code here for "relation_one" field
 
@@ -151,6 +219,26 @@ const MetricsData = [
 
     // type code here for "relation_one" field
   },
+
+  {
+    name: 'Marketing ROI',
+
+    value: 150,
+
+    // type code here for "relation_one" field
+
+    // type code here for "relation_one" field
+  },
+
+  {
+    name: 'Employee Productivity',
+
+    value: 95,
+
+    // type code here for "relation_one" field
+
+    // type code here for "relation_one" field
+  },
 ];
 
 const NotesData = [
@@ -177,6 +265,22 @@ const NotesData = [
 
     // type code here for "relation_one" field
   },
+
+  {
+    content: 'Umbrella Corp has budget constraints.',
+
+    // type code here for "relation_one" field
+
+    // type code here for "relation_one" field
+  },
+
+  {
+    content: 'Hooli is expanding their operations.',
+
+    // type code here for "relation_one" field
+
+    // type code here for "relation_one" field
+  },
 ];
 
 const BranchesData = [
@@ -190,6 +294,14 @@ const BranchesData = [
 
   {
     name: 'Suburban Office',
+  },
+
+  {
+    name: 'Riverside Office',
+  },
+
+  {
+    name: 'Lakeside Office',
   },
 ];
 
@@ -228,6 +340,28 @@ async function associateUserWithBranch() {
   if (User2?.setBranch) {
     await User2.setBranch(relatedBranch2);
   }
+
+  const relatedBranch3 = await Branches.findOne({
+    offset: Math.floor(Math.random() * (await Branches.count())),
+  });
+  const User3 = await Users.findOne({
+    order: [['id', 'ASC']],
+    offset: 3,
+  });
+  if (User3?.setBranch) {
+    await User3.setBranch(relatedBranch3);
+  }
+
+  const relatedBranch4 = await Branches.findOne({
+    offset: Math.floor(Math.random() * (await Branches.count())),
+  });
+  const User4 = await Users.findOne({
+    order: [['id', 'ASC']],
+    offset: 4,
+  });
+  if (User4?.setBranch) {
+    await User4.setBranch(relatedBranch4);
+  }
 }
 
 async function associateActivityWithLead() {
@@ -262,6 +396,28 @@ async function associateActivityWithLead() {
   });
   if (Activity2?.setLead) {
     await Activity2.setLead(relatedLead2);
+  }
+
+  const relatedLead3 = await Leads.findOne({
+    offset: Math.floor(Math.random() * (await Leads.count())),
+  });
+  const Activity3 = await Activities.findOne({
+    order: [['id', 'ASC']],
+    offset: 3,
+  });
+  if (Activity3?.setLead) {
+    await Activity3.setLead(relatedLead3);
+  }
+
+  const relatedLead4 = await Leads.findOne({
+    offset: Math.floor(Math.random() * (await Leads.count())),
+  });
+  const Activity4 = await Activities.findOne({
+    order: [['id', 'ASC']],
+    offset: 4,
+  });
+  if (Activity4?.setLead) {
+    await Activity4.setLead(relatedLead4);
   }
 }
 
@@ -298,6 +454,28 @@ async function associateActivityWithBranch() {
   if (Activity2?.setBranch) {
     await Activity2.setBranch(relatedBranch2);
   }
+
+  const relatedBranch3 = await Branches.findOne({
+    offset: Math.floor(Math.random() * (await Branches.count())),
+  });
+  const Activity3 = await Activities.findOne({
+    order: [['id', 'ASC']],
+    offset: 3,
+  });
+  if (Activity3?.setBranch) {
+    await Activity3.setBranch(relatedBranch3);
+  }
+
+  const relatedBranch4 = await Branches.findOne({
+    offset: Math.floor(Math.random() * (await Branches.count())),
+  });
+  const Activity4 = await Activities.findOne({
+    order: [['id', 'ASC']],
+    offset: 4,
+  });
+  if (Activity4?.setBranch) {
+    await Activity4.setBranch(relatedBranch4);
+  }
 }
 
 async function associateContactWithLead() {
@@ -332,6 +510,28 @@ async function associateContactWithLead() {
   });
   if (Contact2?.setLead) {
     await Contact2.setLead(relatedLead2);
+  }
+
+  const relatedLead3 = await Leads.findOne({
+    offset: Math.floor(Math.random() * (await Leads.count())),
+  });
+  const Contact3 = await Contacts.findOne({
+    order: [['id', 'ASC']],
+    offset: 3,
+  });
+  if (Contact3?.setLead) {
+    await Contact3.setLead(relatedLead3);
+  }
+
+  const relatedLead4 = await Leads.findOne({
+    offset: Math.floor(Math.random() * (await Leads.count())),
+  });
+  const Contact4 = await Contacts.findOne({
+    order: [['id', 'ASC']],
+    offset: 4,
+  });
+  if (Contact4?.setLead) {
+    await Contact4.setLead(relatedLead4);
   }
 }
 
@@ -368,6 +568,28 @@ async function associateContactWithBranch() {
   if (Contact2?.setBranch) {
     await Contact2.setBranch(relatedBranch2);
   }
+
+  const relatedBranch3 = await Branches.findOne({
+    offset: Math.floor(Math.random() * (await Branches.count())),
+  });
+  const Contact3 = await Contacts.findOne({
+    order: [['id', 'ASC']],
+    offset: 3,
+  });
+  if (Contact3?.setBranch) {
+    await Contact3.setBranch(relatedBranch3);
+  }
+
+  const relatedBranch4 = await Branches.findOne({
+    offset: Math.floor(Math.random() * (await Branches.count())),
+  });
+  const Contact4 = await Contacts.findOne({
+    order: [['id', 'ASC']],
+    offset: 4,
+  });
+  if (Contact4?.setBranch) {
+    await Contact4.setBranch(relatedBranch4);
+  }
 }
 
 async function associateLeadWithOwner() {
@@ -403,40 +625,27 @@ async function associateLeadWithOwner() {
   if (Lead2?.setOwner) {
     await Lead2.setOwner(relatedOwner2);
   }
-}
 
-async function associateLeadWithBranch() {
-  const relatedBranch0 = await Branches.findOne({
-    offset: Math.floor(Math.random() * (await Branches.count())),
+  const relatedOwner3 = await Users.findOne({
+    offset: Math.floor(Math.random() * (await Users.count())),
   });
-  const Lead0 = await Leads.findOne({
+  const Lead3 = await Leads.findOne({
     order: [['id', 'ASC']],
-    offset: 0,
+    offset: 3,
   });
-  if (Lead0?.setBranch) {
-    await Lead0.setBranch(relatedBranch0);
+  if (Lead3?.setOwner) {
+    await Lead3.setOwner(relatedOwner3);
   }
 
-  const relatedBranch1 = await Branches.findOne({
-    offset: Math.floor(Math.random() * (await Branches.count())),
+  const relatedOwner4 = await Users.findOne({
+    offset: Math.floor(Math.random() * (await Users.count())),
   });
-  const Lead1 = await Leads.findOne({
+  const Lead4 = await Leads.findOne({
     order: [['id', 'ASC']],
-    offset: 1,
+    offset: 4,
   });
-  if (Lead1?.setBranch) {
-    await Lead1.setBranch(relatedBranch1);
-  }
-
-  const relatedBranch2 = await Branches.findOne({
-    offset: Math.floor(Math.random() * (await Branches.count())),
-  });
-  const Lead2 = await Leads.findOne({
-    order: [['id', 'ASC']],
-    offset: 2,
-  });
-  if (Lead2?.setBranch) {
-    await Lead2.setBranch(relatedBranch2);
+  if (Lead4?.setOwner) {
+    await Lead4.setOwner(relatedOwner4);
   }
 }
 
@@ -473,6 +682,85 @@ async function associateLeadWithBranch() {
   if (Lead2?.setBranch) {
     await Lead2.setBranch(relatedBranch2);
   }
+
+  const relatedBranch3 = await Branches.findOne({
+    offset: Math.floor(Math.random() * (await Branches.count())),
+  });
+  const Lead3 = await Leads.findOne({
+    order: [['id', 'ASC']],
+    offset: 3,
+  });
+  if (Lead3?.setBranch) {
+    await Lead3.setBranch(relatedBranch3);
+  }
+
+  const relatedBranch4 = await Branches.findOne({
+    offset: Math.floor(Math.random() * (await Branches.count())),
+  });
+  const Lead4 = await Leads.findOne({
+    order: [['id', 'ASC']],
+    offset: 4,
+  });
+  if (Lead4?.setBranch) {
+    await Lead4.setBranch(relatedBranch4);
+  }
+}
+
+async function associateLeadWithBranch() {
+  const relatedBranch0 = await Branches.findOne({
+    offset: Math.floor(Math.random() * (await Branches.count())),
+  });
+  const Lead0 = await Leads.findOne({
+    order: [['id', 'ASC']],
+    offset: 0,
+  });
+  if (Lead0?.setBranch) {
+    await Lead0.setBranch(relatedBranch0);
+  }
+
+  const relatedBranch1 = await Branches.findOne({
+    offset: Math.floor(Math.random() * (await Branches.count())),
+  });
+  const Lead1 = await Leads.findOne({
+    order: [['id', 'ASC']],
+    offset: 1,
+  });
+  if (Lead1?.setBranch) {
+    await Lead1.setBranch(relatedBranch1);
+  }
+
+  const relatedBranch2 = await Branches.findOne({
+    offset: Math.floor(Math.random() * (await Branches.count())),
+  });
+  const Lead2 = await Leads.findOne({
+    order: [['id', 'ASC']],
+    offset: 2,
+  });
+  if (Lead2?.setBranch) {
+    await Lead2.setBranch(relatedBranch2);
+  }
+
+  const relatedBranch3 = await Branches.findOne({
+    offset: Math.floor(Math.random() * (await Branches.count())),
+  });
+  const Lead3 = await Leads.findOne({
+    order: [['id', 'ASC']],
+    offset: 3,
+  });
+  if (Lead3?.setBranch) {
+    await Lead3.setBranch(relatedBranch3);
+  }
+
+  const relatedBranch4 = await Branches.findOne({
+    offset: Math.floor(Math.random() * (await Branches.count())),
+  });
+  const Lead4 = await Leads.findOne({
+    order: [['id', 'ASC']],
+    offset: 4,
+  });
+  if (Lead4?.setBranch) {
+    await Lead4.setBranch(relatedBranch4);
+  }
 }
 
 async function associateMetricWithBranch() {
@@ -508,6 +796,28 @@ async function associateMetricWithBranch() {
   if (Metric2?.setBranch) {
     await Metric2.setBranch(relatedBranch2);
   }
+
+  const relatedBranch3 = await Branches.findOne({
+    offset: Math.floor(Math.random() * (await Branches.count())),
+  });
+  const Metric3 = await Metrics.findOne({
+    order: [['id', 'ASC']],
+    offset: 3,
+  });
+  if (Metric3?.setBranch) {
+    await Metric3.setBranch(relatedBranch3);
+  }
+
+  const relatedBranch4 = await Branches.findOne({
+    offset: Math.floor(Math.random() * (await Branches.count())),
+  });
+  const Metric4 = await Metrics.findOne({
+    order: [['id', 'ASC']],
+    offset: 4,
+  });
+  if (Metric4?.setBranch) {
+    await Metric4.setBranch(relatedBranch4);
+  }
 }
 
 async function associateMetricWithBranch() {
@@ -542,6 +852,28 @@ async function associateMetricWithBranch() {
   });
   if (Metric2?.setBranch) {
     await Metric2.setBranch(relatedBranch2);
+  }
+
+  const relatedBranch3 = await Branches.findOne({
+    offset: Math.floor(Math.random() * (await Branches.count())),
+  });
+  const Metric3 = await Metrics.findOne({
+    order: [['id', 'ASC']],
+    offset: 3,
+  });
+  if (Metric3?.setBranch) {
+    await Metric3.setBranch(relatedBranch3);
+  }
+
+  const relatedBranch4 = await Branches.findOne({
+    offset: Math.floor(Math.random() * (await Branches.count())),
+  });
+  const Metric4 = await Metrics.findOne({
+    order: [['id', 'ASC']],
+    offset: 4,
+  });
+  if (Metric4?.setBranch) {
+    await Metric4.setBranch(relatedBranch4);
   }
 }
 
@@ -578,6 +910,28 @@ async function associateNoteWithLead() {
   if (Note2?.setLead) {
     await Note2.setLead(relatedLead2);
   }
+
+  const relatedLead3 = await Leads.findOne({
+    offset: Math.floor(Math.random() * (await Leads.count())),
+  });
+  const Note3 = await Notes.findOne({
+    order: [['id', 'ASC']],
+    offset: 3,
+  });
+  if (Note3?.setLead) {
+    await Note3.setLead(relatedLead3);
+  }
+
+  const relatedLead4 = await Leads.findOne({
+    offset: Math.floor(Math.random() * (await Leads.count())),
+  });
+  const Note4 = await Notes.findOne({
+    order: [['id', 'ASC']],
+    offset: 4,
+  });
+  if (Note4?.setLead) {
+    await Note4.setLead(relatedLead4);
+  }
 }
 
 async function associateNoteWithBranch() {
@@ -612,6 +966,28 @@ async function associateNoteWithBranch() {
   });
   if (Note2?.setBranch) {
     await Note2.setBranch(relatedBranch2);
+  }
+
+  const relatedBranch3 = await Branches.findOne({
+    offset: Math.floor(Math.random() * (await Branches.count())),
+  });
+  const Note3 = await Notes.findOne({
+    order: [['id', 'ASC']],
+    offset: 3,
+  });
+  if (Note3?.setBranch) {
+    await Note3.setBranch(relatedBranch3);
+  }
+
+  const relatedBranch4 = await Branches.findOne({
+    offset: Math.floor(Math.random() * (await Branches.count())),
+  });
+  const Note4 = await Notes.findOne({
+    order: [['id', 'ASC']],
+    offset: 4,
+  });
+  if (Note4?.setBranch) {
+    await Note4.setBranch(relatedBranch4);
   }
 }
 
