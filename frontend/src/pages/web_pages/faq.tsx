@@ -18,7 +18,7 @@ import FaqSection from '../../components/WebPageComponents/FaqComponent';
 export default function WebSite() {
   const cardsStyle = useAppSelector((state) => state.style.cardsStyle);
   const bgColor = useAppSelector((state) => state.style.bgLayoutColor);
-  const projectName = 'Test555';
+  const projectName = 'Test 444';
 
   useEffect(() => {
     const darkElement = document.querySelector('body .dark');
@@ -100,10 +100,10 @@ export default function WebSite() {
           content={`Find answers to common questions about ${projectName}. Learn more about our services, features, and how we can assist your legal practice.`}
         />
       </Head>
-      <WebSiteHeader projectName={'Test555'} pages={pages} />
+      <WebSiteHeader projectName={'Test 444'} pages={pages} />
       <main className={`flex-grow    bg-white  rounded-none  `}>
         <HeroSection
-          projectName={'Test555'}
+          projectName={'Test 444'}
           image={['Person reading FAQ on laptop']}
           mainText={`Your Questions Answered with ${projectName}`}
           subTitle={`Explore our comprehensive FAQ section to find answers to your questions about ${projectName}. Learn how our services can benefit your legal practice.`}
@@ -112,13 +112,13 @@ export default function WebSite() {
         />
 
         <FaqSection
-          projectName={'Test555'}
+          projectName={'Test 444'}
           design={FaqDesigns.ACCORDION || ''}
           faqs={faqs}
           mainText={`Frequently Asked Questions About ${projectName} `}
         />
       </main>
-      <WebSiteFooter projectName={'Test555'} pages={pages} />
+      <WebSiteFooter projectName={'Test 444'} pages={pages} />
     </div>
   );
 }

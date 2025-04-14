@@ -27,7 +27,7 @@ import ContactFormSection from '../components/WebPageComponents/ContactFormCompo
 export default function WebSite() {
   const cardsStyle = useAppSelector((state) => state.style.cardsStyle);
   const bgColor = useAppSelector((state) => state.style.bgLayoutColor);
-  const projectName = 'Test555';
+  const projectName = 'Test 444';
 
   useEffect(() => {
     const darkElement = document.querySelector('body .dark');
@@ -125,10 +125,10 @@ export default function WebSite() {
           content={`Discover our CRM app tailored for the law industry, connecting departments like sales, customer service, and marketing. Streamline your operations and track leads efficiently.`}
         />
       </Head>
-      <WebSiteHeader projectName={'Test555'} pages={pages} />
+      <WebSiteHeader projectName={'Test 444'} pages={pages} />
       <main className={`flex-grow    bg-white  rounded-none  `}>
         <HeroSection
-          projectName={'Test555'}
+          projectName={'Test 444'}
           image={['Law professionals collaborating efficiently']}
           mainText={`Revolutionize Your Legal Operations Today`}
           subTitle={`Experience seamless integration with ${projectName}, the CRM designed for the law industry. Connect departments, track leads, and organize effortlessly.`}
@@ -137,9 +137,9 @@ export default function WebSite() {
         />
 
         <FeaturesSection
-          projectName={'Test555'}
+          projectName={'Test 444'}
           image={['Dashboard showcasing CRM features']}
-          withBg={0}
+          withBg={1}
           features={features_points}
           mainText={`Discover Key Features of ${projectName}`}
           subTitle={`Unlock the full potential of your legal operations with ${projectName}. Streamline processes, enhance collaboration, and drive efficiency.`}
@@ -147,7 +147,7 @@ export default function WebSite() {
         />
 
         <AboutUsSection
-          projectName={'Test555'}
+          projectName={'Test 444'}
           image={['Team collaborating in modern office']}
           mainText={`Empowering Legal Teams with ${projectName}`}
           subTitle={`At ${projectName}, we are dedicated to transforming the way legal professionals work. Our CRM is designed to connect departments, streamline operations, and enhance productivity across the board.`}
@@ -156,21 +156,21 @@ export default function WebSite() {
         />
 
         <TestimonialsSection
-          projectName={'Test555'}
+          projectName={'Test 444'}
           design={TestimonialsDesigns.MULTI_CARD_DISPLAY || ''}
           testimonials={testimonials}
           mainText={`What Our Clients Say About ${projectName} `}
         />
 
         <ContactFormSection
-          projectName={'Test555'}
+          projectName={'Test 444'}
           design={ContactFormDesigns.WITH_IMAGE || ''}
           image={['Person typing on a laptop']}
           mainText={`Get in Touch with ${projectName} `}
           subTitle={`Reach out to us anytime. Our team is ready to assist you with any inquiries or support you need. Expect a response within 24 hours.`}
         />
       </main>
-      <WebSiteFooter projectName={'Test555'} pages={pages} />
+      <WebSiteFooter projectName={'Test 444'} pages={pages} />
     </div>
   );
 }

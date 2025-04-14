@@ -75,7 +75,7 @@ export default function AsideMenuLayer({
         >
           <div className='text-center flex-1 lg:text-left lg:pl-6 xl:text-center xl:pl-0'>
             <Link href={'/home'}>
-              <b className='font-black'>Test555</b>
+              <b className='font-black'>Test 444</b>
             </Link>
 
             {organizationName && <p>{organizationName}</p>}

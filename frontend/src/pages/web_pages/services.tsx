@@ -24,7 +24,7 @@ import TestimonialsSection from '../../components/WebPageComponents/Testimonials
 export default function WebSite() {
   const cardsStyle = useAppSelector((state) => state.style.cardsStyle);
   const bgColor = useAppSelector((state) => state.style.bgLayoutColor);
-  const projectName = 'Test555';
+  const projectName = 'Test 444';
 
   useEffect(() => {
     const darkElement = document.querySelector('body .dark');
@@ -122,10 +122,10 @@ export default function WebSite() {
           content={`Explore the range of services offered by ${projectName}. From lead management to document collaboration, discover how we can transform your legal practice.`}
         />
       </Head>
-      <WebSiteHeader projectName={'Test555'} pages={pages} />
+      <WebSiteHeader projectName={'Test 444'} pages={pages} />
       <main className={`flex-grow    bg-white  rounded-none  `}>
         <HeroSection
-          projectName={'Test555'}
+          projectName={'Test 444'}
           image={['Legal professionals in a meeting']}
           mainText={`Transform Your Practice with ${projectName}`}
           subTitle={`Discover the comprehensive services offered by ${projectName} to streamline your legal operations. From lead management to seamless document collaboration, we have you covered.`}
@@ -134,9 +134,9 @@ export default function WebSite() {
         />
 
         <FeaturesSection
-          projectName={'Test555'}
+          projectName={'Test 444'}
           image={['Icons representing various services']}
-          withBg={0}
+          withBg={1}
           features={features_points}
           mainText={`Explore ${projectName} Services`}
           subTitle={`Unlock the full potential of your legal practice with our tailored services. Discover how ${projectName} can enhance your operations.`}
@@ -144,21 +144,21 @@ export default function WebSite() {
         />
 
         <TestimonialsSection
-          projectName={'Test555'}
+          projectName={'Test 444'}
           design={TestimonialsDesigns.MULTI_CARD_DISPLAY || ''}
           testimonials={testimonials}
           mainText={`Client Success Stories with ${projectName} `}
         />
 
         <ContactFormSection
-          projectName={'Test555'}
+          projectName={'Test 444'}
           design={ContactFormDesigns.HIGHLIGHTED_DIVERSITY || ''}
           image={['Person typing on a laptop']}
           mainText={`Reach Out to ${projectName} `}
           subTitle={`We're here to assist you. Contact us anytime, and our team will respond within 24 hours to address your inquiries.`}
         />
       </main>
-      <WebSiteFooter projectName={'Test555'} pages={pages} />
+      <WebSiteFooter projectName={'Test 444'} pages={pages} />
     </div>
   );
 }

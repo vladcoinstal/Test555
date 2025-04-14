@@ -24,7 +24,7 @@ import ContactFormSection from '../../components/WebPageComponents/ContactFormCo
 export default function WebSite() {
   const cardsStyle = useAppSelector((state) => state.style.cardsStyle);
   const bgColor = useAppSelector((state) => state.style.bgLayoutColor);
-  const projectName = 'Test555';
+  const projectName = 'Test 444';
 
   useEffect(() => {
     const darkElement = document.querySelector('body .dark');
@@ -101,10 +101,10 @@ export default function WebSite() {
           content={`Get to know the team behind ${projectName}. Learn about our mission, values, and how we are transforming the legal industry with our innovative CRM solutions.`}
         />
       </Head>
-      <WebSiteHeader projectName={'Test555'} pages={pages} />
+      <WebSiteHeader projectName={'Test 444'} pages={pages} />
       <main className={`flex-grow    bg-white  rounded-none  `}>
         <HeroSection
-          projectName={'Test555'}
+          projectName={'Test 444'}
           image={['Team brainstorming in modern office']}
           mainText={`Meet the Visionaries Behind ${projectName}`}
           subTitle={`Discover the passion and dedication driving ${projectName}. Our team is committed to revolutionizing the legal industry with cutting-edge CRM solutions.`}
@@ -113,7 +113,7 @@ export default function WebSite() {
         />
 
         <AboutUsSection
-          projectName={'Test555'}
+          projectName={'Test 444'}
           image={['Team members discussing project goals']}
           mainText={`Our Journey with ${projectName}`}
           subTitle={`At ${projectName}, we are driven by innovation and a commitment to excellence. Our mission is to empower legal professionals with tools that enhance efficiency and collaboration.`}
@@ -122,21 +122,21 @@ export default function WebSite() {
         />
 
         <TestimonialsSection
-          projectName={'Test555'}
+          projectName={'Test 444'}
           design={TestimonialsDesigns.HORIZONTAL_CAROUSEL_DIVERSITY || ''}
           testimonials={testimonials}
           mainText={`Hear from Our Satisfied Clients `}
         />
 
         <ContactFormSection
-          projectName={'Test555'}
+          projectName={'Test 444'}
           design={ContactFormDesigns.HIGHLIGHTED || ''}
           image={['Person using a smartphone']}
           mainText={`Connect with ${projectName} Today `}
           subTitle={`We're here to help. Reach out to us anytime, and our team will respond within 24 hours to assist with your inquiries.`}
         />
       </main>
-      <WebSiteFooter projectName={'Test555'} pages={pages} />
+      <WebSiteFooter projectName={'Test 444'} pages={pages} />
     </div>
   );
 }
